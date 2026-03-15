@@ -1,0 +1,12 @@
+# Ignorar las llaves y secretos (SEGURIDAD)
+.env
+
+# Ignorar datos locales de trading
+*.csv
+*.log
+database.sqlite
+
+# Ignorar archivos basura de Python y sistema
+__pycache__/
+*.pyc
+.DS_Store
