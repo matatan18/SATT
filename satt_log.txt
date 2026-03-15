@@ -1,0 +1,494 @@
+2025-08-25 18:21:18,287 - INFO - Inicializando clase SATT
+2025-08-25 18:21:18,289 - INFO - Configuración cargada desde config.json
+2025-08-25 18:21:18,291 - INFO - ConfigManager inicializado.
+2025-08-25 18:21:18,291 - INFO - APIManager inicializado con URL de Binance: https://api.binance.com/api/v3
+2025-08-25 18:21:18,291 - INFO - UIManager inicializado.
+2025-08-25 18:21:18,292 - INFO - AlertManager inicializado.
+2025-08-25 18:21:18,292 - INFO - IndicatorCalculator inicializado.
+2025-08-25 18:21:18,292 - INFO - Cargando configuración inicial y precios.
+2025-08-25 18:21:18,292 - DEBUG - Intentando obtener precio para BTCUSDT de Binance.
+2025-08-25 18:21:18,293 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:18,557 - WARNING - Error en la petición a la API de Binance: HTTPSConnectionPool(host='api.binance.com', port=443): Max retries exceeded with url: /api/v3/ticker/price?symbol=BTCUSDT (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fd012913a10>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-25 18:21:18,558 - DEBUG - No se pudo obtener el precio para BTCUSDT de Binance. Retornando None.
+2025-08-25 18:21:18,558 - ERROR - APIManager: Falló al obtener precio de BTCUSDT. Valor devuelto: None. Las conversiones a BTC no serán precisas y se usará 1.0 como fallback.
+2025-08-25 18:21:18,558 - INFO - Actualizando datos para BTCUSDT
+2025-08-25 18:21:18,559 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:18,566 - DEBUG - get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/BTCUSDT
+2025-08-25 18:21:18,566 - DEBUG - Entering get()
+2025-08-25 18:21:18,566 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:18,566 - DEBUG - url=https://query2.finance.yahoo.com/v10/finance/quoteSummary/BTCUSDT
+2025-08-25 18:21:18,567 - DEBUG - params={'modules': 'financialData,quoteType,defaultKeyStatistics,assetProfile,summaryDetail', 'corsDomain': 'finance.yahoo.com', 'formatted': 'false', 'symbol': 'BTCUSDT'}
+2025-08-25 18:21:18,567 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:18,567 - DEBUG - cookie_mode = 'basic'
+2025-08-25 18:21:18,567 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-08-25 18:21:18,567 - DEBUG -     Entering _get_cookie_basic()
+2025-08-25 18:21:18,567 - DEBUG -      Entering _load_cookie_curlCffi()
+2025-08-25 18:21:18,568 - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-08-25 18:21:18,569 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2025-08-25 18:21:18,569 - DEBUG -      Exiting _load_cookie_curlCffi()
+2025-08-25 18:21:18,569 - DEBUG - reusing persistent cookie
+2025-08-25 18:21:18,569 - DEBUG -     Exiting _get_cookie_basic()
+2025-08-25 18:21:18,569 - DEBUG -     Entering _get_crumb_basic()
+2025-08-25 18:21:18,569 - DEBUG -      Entering _get_cookie_basic()
+2025-08-25 18:21:18,569 - DEBUG - reusing cookie
+2025-08-25 18:21:18,570 - DEBUG -      Exiting _get_cookie_basic()
+2025-08-25 18:21:19,480 - DEBUG - crumb = '9MoFrWRCbO5'
+2025-08-25 18:21:19,480 - DEBUG -     Exiting _get_crumb_basic()
+2025-08-25 18:21:19,480 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-08-25 18:21:19,480 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:20,810 - DEBUG - response code=404
+2025-08-25 18:21:20,810 - DEBUG - toggling cookie strategy basic -> csrf
+2025-08-25 18:21:20,811 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:20,811 - DEBUG - cookie_mode = 'csrf'
+2025-08-25 18:21:20,811 - DEBUG -    Entering _get_crumb_csrf()
+2025-08-25 18:21:20,811 - DEBUG -     Entering _get_cookie_csrf()
+2025-08-25 18:21:20,811 - DEBUG -      Entering _load_cookie_curlCffi()
+2025-08-25 18:21:20,811 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2025-08-25 18:21:20,812 - DEBUG -      Exiting _load_cookie_curlCffi()
+2025-08-25 18:21:20,812 - DEBUG - reusing persistent cookie
+2025-08-25 18:21:20,812 - DEBUG -     Exiting _get_cookie_csrf()
+2025-08-25 18:21:21,220 - DEBUG - crumb = '9MoFrWRCbO5'
+2025-08-25 18:21:21,221 - DEBUG -    Exiting _get_crumb_csrf()
+2025-08-25 18:21:21,221 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:21,630 - DEBUG - response code=404
+2025-08-25 18:21:21,630 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:21,630 - DEBUG - Exiting get()
+2025-08-25 18:21:21,630 - ERROR - HTTP Error 404: 
+2025-08-25 18:21:21,630 - DEBUG - get_raw_json(): https://query1.finance.yahoo.com/v7/finance/quote?
+2025-08-25 18:21:21,630 - DEBUG - Entering get()
+2025-08-25 18:21:21,630 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:21,630 - DEBUG - url=https://query1.finance.yahoo.com/v7/finance/quote?
+2025-08-25 18:21:21,630 - DEBUG - params={'symbols': 'BTCUSDT', 'formatted': 'false'}
+2025-08-25 18:21:21,630 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:21,630 - DEBUG - cookie_mode = 'csrf'
+2025-08-25 18:21:21,631 - DEBUG -    Entering _get_crumb_csrf()
+2025-08-25 18:21:21,631 - DEBUG - reusing crumb
+2025-08-25 18:21:21,631 - DEBUG -    Exiting _get_crumb_csrf()
+2025-08-25 18:21:21,631 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:22,039 - DEBUG - response code=200
+2025-08-25 18:21:22,039 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:22,039 - DEBUG - Exiting get()
+2025-08-25 18:21:22,040 - DEBUG - Entering get()
+2025-08-25 18:21:22,040 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:22,041 - DEBUG - url=https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/BTCUSDT?symbol=BTCUSDT&type=trailingPegRatio&period1=1740355200&period2=1756166400
+2025-08-25 18:21:22,041 - DEBUG - params=None
+2025-08-25 18:21:22,041 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:22,041 - DEBUG - cookie_mode = 'csrf'
+2025-08-25 18:21:22,041 - DEBUG -    Entering _get_crumb_csrf()
+2025-08-25 18:21:22,041 - DEBUG - reusing crumb
+2025-08-25 18:21:22,041 - DEBUG -    Exiting _get_crumb_csrf()
+2025-08-25 18:21:22,041 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:22,368 - DEBUG - response code=200
+2025-08-25 18:21:22,369 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:22,369 - DEBUG - Exiting get()
+2025-08-25 18:21:22,369 - WARNING - No se encontró el precio actual para el símbolo BTCUSDT en Yahoo Finance.
+2025-08-25 18:21:22,369 - ERROR - No se pudo obtener el precio de BTCUSDT de ninguna de las fuentes.
+2025-08-25 18:21:22,369 - ERROR - No hay precio actual ni último precio conocido válido para BTCUSDT. Saltando cálculos detallados para este activo.
+2025-08-25 18:21:22,374 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:22,374 - INFO - Actualizando datos para ETHUSDT
+2025-08-25 18:21:22,375 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:22,757 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=ETHUSDT HTTP/1.1" 200 44
+2025-08-25 18:21:22,758 - DEBUG - Intentando obtener precio para ETHUSDT de Binance.
+2025-08-25 18:21:22,759 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:23,174 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=ETHUSDT HTTP/1.1" 200 44
+2025-08-25 18:21:23,175 - DEBUG - Precio de ETHUSDT obtenido de Binance: 4372.12
+2025-08-25 18:21:23,176 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:23,579 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=ETHUSDT HTTP/1.1" 200 44
+2025-08-25 18:21:23,580 - DEBUG - Intentando obtener klines históricos para ETHUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:23,580 - DEBUG - Intentando obtener klines históricos para ETHUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:23,581 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:23,985 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=ETHUSDT&interval=1w&limit=60 HTTP/1.1" 200 3945
+2025-08-25 18:21:23,986 - DEBUG - Klines históricos para ETHUSDT en 1w obtenidos.
+2025-08-25 18:21:23,992 - DEBUG - Klines históricos para ETHUSDT en 1w obtenidos.
+2025-08-25 18:21:23,994 - DEBUG - Intentando obtener klines históricos para ETHUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:23,994 - DEBUG - Intentando obtener klines históricos para ETHUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:23,994 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:24,000 - WARNING - Error en la petición a la API de Binance: HTTPSConnectionPool(host='api.binance.com', port=443): Max retries exceeded with url: /api/v3/klines?symbol=ETHUSDT&interval=1M&limit=60 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fd012815310>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-25 18:21:24,000 - ERROR - No se pudieron obtener klines históricos para ETHUSDT.
+2025-08-25 18:21:24,000 - WARNING - No se obtuvieron datos históricos para ETHUSDT (crypto) con intervalo 1M y límite 60.
+2025-08-25 18:21:24,000 - WARNING - No se pudieron calcular indicadores para ETHUSDT en 1M debido a la falta de datos.
+2025-08-25 18:21:24,002 - INFO - [2025-08-25 18:21:24] ALERTA 'RSI CRITICO' procesada (Telegram deshabilitado).
+2025-08-25 18:21:24,005 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:24,005 - INFO - Actualizando datos para LINKUSDT
+2025-08-25 18:21:24,005 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:24,010 - DEBUG - get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/LINKUSDT
+2025-08-25 18:21:24,010 - DEBUG - Entering get()
+2025-08-25 18:21:24,010 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:24,010 - DEBUG - url=https://query2.finance.yahoo.com/v10/finance/quoteSummary/LINKUSDT
+2025-08-25 18:21:24,010 - DEBUG - params={'modules': 'financialData,quoteType,defaultKeyStatistics,assetProfile,summaryDetail', 'corsDomain': 'finance.yahoo.com', 'formatted': 'false', 'symbol': 'LINKUSDT'}
+2025-08-25 18:21:24,010 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:24,010 - DEBUG - cookie_mode = 'csrf'
+2025-08-25 18:21:24,010 - DEBUG -    Entering _get_crumb_csrf()
+2025-08-25 18:21:24,010 - DEBUG - reusing crumb
+2025-08-25 18:21:24,010 - DEBUG -    Exiting _get_crumb_csrf()
+2025-08-25 18:21:24,010 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:24,407 - DEBUG - response code=404
+2025-08-25 18:21:24,407 - DEBUG - toggling cookie strategy csrf -> basic
+2025-08-25 18:21:24,407 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:24,407 - DEBUG - cookie_mode = 'basic'
+2025-08-25 18:21:24,407 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-08-25 18:21:24,407 - DEBUG -     Entering _get_cookie_basic()
+2025-08-25 18:21:24,407 - DEBUG -      Entering _load_cookie_curlCffi()
+2025-08-25 18:21:24,408 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2025-08-25 18:21:24,408 - DEBUG -      Exiting _load_cookie_curlCffi()
+2025-08-25 18:21:24,408 - DEBUG - reusing persistent cookie
+2025-08-25 18:21:24,408 - DEBUG -     Exiting _get_cookie_basic()
+2025-08-25 18:21:24,408 - DEBUG -     Entering _get_crumb_basic()
+2025-08-25 18:21:24,408 - DEBUG -      Entering _get_cookie_basic()
+2025-08-25 18:21:24,408 - DEBUG - reusing cookie
+2025-08-25 18:21:24,408 - DEBUG -      Exiting _get_cookie_basic()
+2025-08-25 18:21:24,805 - DEBUG - crumb = '9MoFrWRCbO5'
+2025-08-25 18:21:24,805 - DEBUG -     Exiting _get_crumb_basic()
+2025-08-25 18:21:24,805 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-08-25 18:21:24,805 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:25,214 - DEBUG - response code=404
+2025-08-25 18:21:25,214 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:25,214 - DEBUG - Exiting get()
+2025-08-25 18:21:25,214 - ERROR - HTTP Error 404: 
+2025-08-25 18:21:25,214 - DEBUG - get_raw_json(): https://query1.finance.yahoo.com/v7/finance/quote?
+2025-08-25 18:21:25,214 - DEBUG - Entering get()
+2025-08-25 18:21:25,214 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:25,214 - DEBUG - url=https://query1.finance.yahoo.com/v7/finance/quote?
+2025-08-25 18:21:25,214 - DEBUG - params={'symbols': 'LINKUSDT', 'formatted': 'false'}
+2025-08-25 18:21:25,214 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:25,214 - DEBUG - cookie_mode = 'basic'
+2025-08-25 18:21:25,214 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-08-25 18:21:25,214 - DEBUG -     Entering _get_cookie_basic()
+2025-08-25 18:21:25,214 - DEBUG - reusing cookie
+2025-08-25 18:21:25,215 - DEBUG -     Exiting _get_cookie_basic()
+2025-08-25 18:21:25,215 - DEBUG -     Entering _get_crumb_basic()
+2025-08-25 18:21:25,215 - DEBUG - reusing crumb
+2025-08-25 18:21:25,215 - DEBUG -     Exiting _get_crumb_basic()
+2025-08-25 18:21:25,215 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-08-25 18:21:25,215 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:25,623 - DEBUG - response code=200
+2025-08-25 18:21:25,624 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:25,624 - DEBUG - Exiting get()
+2025-08-25 18:21:25,624 - DEBUG - Entering get()
+2025-08-25 18:21:25,624 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:25,625 - DEBUG - url=https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/LINKUSDT?symbol=LINKUSDT&type=trailingPegRatio&period1=1740355200&period2=1756166400
+2025-08-25 18:21:25,625 - DEBUG - params=None
+2025-08-25 18:21:25,625 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:25,625 - DEBUG - cookie_mode = 'basic'
+2025-08-25 18:21:25,625 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-08-25 18:21:25,625 - DEBUG -     Entering _get_cookie_basic()
+2025-08-25 18:21:25,625 - DEBUG - reusing cookie
+2025-08-25 18:21:25,625 - DEBUG -     Exiting _get_cookie_basic()
+2025-08-25 18:21:25,625 - DEBUG -     Entering _get_crumb_basic()
+2025-08-25 18:21:25,625 - DEBUG - reusing crumb
+2025-08-25 18:21:25,625 - DEBUG -     Exiting _get_crumb_basic()
+2025-08-25 18:21:25,625 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-08-25 18:21:25,625 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:26,033 - DEBUG - response code=200
+2025-08-25 18:21:26,033 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:26,033 - DEBUG - Exiting get()
+2025-08-25 18:21:26,033 - WARNING - No se encontró el precio actual para el símbolo LINKUSDT en Yahoo Finance.
+2025-08-25 18:21:26,033 - ERROR - No se pudo obtener el precio de LINKUSDT de ninguna de las fuentes.
+2025-08-25 18:21:26,033 - ERROR - No hay precio actual ni último precio conocido válido para LINKUSDT. Saltando cálculos detallados para este activo.
+2025-08-25 18:21:26,038 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:26,038 - INFO - Actualizando datos para TONUSDT
+2025-08-25 18:21:26,039 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:26,443 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=TONUSDT HTTP/1.1" 200 41
+2025-08-25 18:21:26,443 - DEBUG - Intentando obtener precio para TONUSDT de Binance.
+2025-08-25 18:21:26,444 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:26,852 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=TONUSDT HTTP/1.1" 200 41
+2025-08-25 18:21:26,853 - DEBUG - Precio de TONUSDT obtenido de Binance: 3.107
+2025-08-25 18:21:26,854 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:27,262 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=TONUSDT HTTP/1.1" 200 41
+2025-08-25 18:21:27,263 - DEBUG - Intentando obtener klines históricos para TONUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:27,263 - DEBUG - Intentando obtener klines históricos para TONUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:27,264 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:27,591 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=TONUSDT&interval=1w&limit=60 HTTP/1.1" 200 3215
+2025-08-25 18:21:27,593 - DEBUG - Klines históricos para TONUSDT en 1w obtenidos.
+2025-08-25 18:21:27,598 - DEBUG - Klines históricos para TONUSDT en 1w obtenidos.
+2025-08-25 18:21:27,599 - DEBUG - Intentando obtener klines históricos para TONUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:27,599 - DEBUG - Intentando obtener klines históricos para TONUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:27,600 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:27,927 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=TONUSDT&interval=1M&limit=60 HTTP/1.1" 200 836
+2025-08-25 18:21:27,928 - DEBUG - Klines históricos para TONUSDT en 1M obtenidos.
+2025-08-25 18:21:27,933 - DEBUG - Klines históricos para TONUSDT en 1M obtenidos.
+2025-08-25 18:21:27,933 - WARNING - No hay suficientes datos para calcular el RSI.
+2025-08-25 18:21:27,935 - INFO - [2025-08-25 18:21:27] ALERTA 'RSI CRITICO' procesada (Telegram deshabilitado).
+2025-08-25 18:21:27,938 - INFO - [2025-08-25 18:21:27] ALERTA 'SOPORTE ALCANZADO' procesada (Telegram deshabilitado).
+2025-08-25 18:21:27,940 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:27,940 - INFO - Actualizando datos para THETAUSDT
+2025-08-25 18:21:27,941 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:28,359 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=THETAUSDT HTTP/1.1" 200 43
+2025-08-25 18:21:28,359 - DEBUG - Intentando obtener precio para THETAUSDT de Binance.
+2025-08-25 18:21:28,360 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:28,984 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=THETAUSDT HTTP/1.1" 200 43
+2025-08-25 18:21:28,985 - DEBUG - Precio de THETAUSDT obtenido de Binance: 0.751
+2025-08-25 18:21:28,986 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:28,990 - DEBUG - Intentando obtener klines históricos para THETAUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:28,990 - ERROR - Intervalo de tiempo no soportado por Yahoo Finance: 1w
+2025-08-25 18:21:28,991 - WARNING - No se obtuvieron datos históricos para THETAUSDT (stock) con intervalo 1w y límite 60.
+2025-08-25 18:21:28,991 - WARNING - No se pudieron calcular indicadores para THETAUSDT en 1w debido a la falta de datos.
+2025-08-25 18:21:28,991 - DEBUG - Intentando obtener klines históricos para THETAUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:28,991 - ERROR - Intervalo de tiempo no soportado por Yahoo Finance: 1M
+2025-08-25 18:21:28,991 - WARNING - No se obtuvieron datos históricos para THETAUSDT (stock) con intervalo 1M y límite 60.
+2025-08-25 18:21:28,992 - WARNING - No se pudieron calcular indicadores para THETAUSDT en 1M debido a la falta de datos.
+2025-08-25 18:21:28,996 - INFO - [2025-08-25 18:21:28] ALERTA 'SOPORTE ALCANZADO' procesada (Telegram deshabilitado).
+2025-08-25 18:21:28,999 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:29,002 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:29,005 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:29,005 - INFO - Todos los datos de activos y totales globales actualizados. SL Total: -98.27 USD, TP Total: 358.01 USD, Capital BTC Eq: 497.79000000 BTC
+2025-08-25 18:21:29,005 - INFO - Realizando actualización de datos periódica...
+2025-08-25 18:21:29,005 - DEBUG - Intentando obtener precio para BTCUSDT de Binance.
+2025-08-25 18:21:29,005 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:29,009 - WARNING - Error en la petición a la API de Binance: HTTPSConnectionPool(host='api.binance.com', port=443): Max retries exceeded with url: /api/v3/ticker/price?symbol=BTCUSDT (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fd01291e990>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-25 18:21:29,009 - DEBUG - No se pudo obtener el precio para BTCUSDT de Binance. Retornando None.
+2025-08-25 18:21:29,009 - ERROR - APIManager: Falló al obtener precio de BTCUSDT. Valor devuelto: None. Las conversiones a BTC no serán precisas y se usará 1.0 como fallback.
+2025-08-25 18:21:29,009 - INFO - Actualizando datos para BTCUSDT
+2025-08-25 18:21:29,010 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:29,015 - DEBUG - get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/BTCUSDT
+2025-08-25 18:21:29,015 - DEBUG - Entering get()
+2025-08-25 18:21:29,015 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:29,015 - DEBUG - url=https://query2.finance.yahoo.com/v10/finance/quoteSummary/BTCUSDT
+2025-08-25 18:21:29,015 - DEBUG - params={'modules': 'financialData,quoteType,defaultKeyStatistics,assetProfile,summaryDetail', 'corsDomain': 'finance.yahoo.com', 'formatted': 'false', 'symbol': 'BTCUSDT'}
+2025-08-25 18:21:29,015 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:29,015 - DEBUG - cookie_mode = 'basic'
+2025-08-25 18:21:29,015 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-08-25 18:21:29,015 - DEBUG -     Entering _get_cookie_basic()
+2025-08-25 18:21:29,015 - DEBUG - reusing cookie
+2025-08-25 18:21:29,015 - DEBUG -     Exiting _get_cookie_basic()
+2025-08-25 18:21:29,015 - DEBUG -     Entering _get_crumb_basic()
+2025-08-25 18:21:29,015 - DEBUG - reusing crumb
+2025-08-25 18:21:29,015 - DEBUG -     Exiting _get_crumb_basic()
+2025-08-25 18:21:29,015 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-08-25 18:21:29,015 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:29,404 - DEBUG - response code=404
+2025-08-25 18:21:29,404 - DEBUG - toggling cookie strategy basic -> csrf
+2025-08-25 18:21:29,404 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:29,404 - DEBUG - cookie_mode = 'csrf'
+2025-08-25 18:21:29,404 - DEBUG -    Entering _get_crumb_csrf()
+2025-08-25 18:21:29,404 - DEBUG -     Entering _get_cookie_csrf()
+2025-08-25 18:21:29,405 - DEBUG -      Entering _load_cookie_curlCffi()
+2025-08-25 18:21:29,405 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2025-08-25 18:21:29,405 - DEBUG -      Exiting _load_cookie_curlCffi()
+2025-08-25 18:21:29,405 - DEBUG - reusing persistent cookie
+2025-08-25 18:21:29,405 - DEBUG -     Exiting _get_cookie_csrf()
+2025-08-25 18:21:29,796 - DEBUG - crumb = '9MoFrWRCbO5'
+2025-08-25 18:21:29,796 - DEBUG -    Exiting _get_crumb_csrf()
+2025-08-25 18:21:29,796 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:30,191 - DEBUG - response code=404
+2025-08-25 18:21:30,191 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:30,191 - DEBUG - Exiting get()
+2025-08-25 18:21:30,191 - ERROR - HTTP Error 404: 
+2025-08-25 18:21:30,191 - DEBUG - get_raw_json(): https://query1.finance.yahoo.com/v7/finance/quote?
+2025-08-25 18:21:30,191 - DEBUG - Entering get()
+2025-08-25 18:21:30,191 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:30,191 - DEBUG - url=https://query1.finance.yahoo.com/v7/finance/quote?
+2025-08-25 18:21:30,192 - DEBUG - params={'symbols': 'BTCUSDT', 'formatted': 'false'}
+2025-08-25 18:21:30,192 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:30,192 - DEBUG - cookie_mode = 'csrf'
+2025-08-25 18:21:30,192 - DEBUG -    Entering _get_crumb_csrf()
+2025-08-25 18:21:30,192 - DEBUG - reusing crumb
+2025-08-25 18:21:30,192 - DEBUG -    Exiting _get_crumb_csrf()
+2025-08-25 18:21:30,192 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:30,519 - DEBUG - response code=200
+2025-08-25 18:21:30,519 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:30,519 - DEBUG - Exiting get()
+2025-08-25 18:21:30,520 - WARNING - No se encontró el precio actual para el símbolo BTCUSDT en Yahoo Finance.
+2025-08-25 18:21:30,520 - ERROR - No se pudo obtener el precio de BTCUSDT de ninguna de las fuentes.
+2025-08-25 18:21:30,520 - ERROR - No hay precio actual ni último precio conocido válido para BTCUSDT. Saltando cálculos detallados para este activo.
+2025-08-25 18:21:30,525 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:30,525 - INFO - Actualizando datos para ETHUSDT
+2025-08-25 18:21:30,525 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:30,530 - DEBUG - get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/ETHUSDT
+2025-08-25 18:21:30,530 - DEBUG - Entering get()
+2025-08-25 18:21:30,530 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:30,530 - DEBUG - url=https://query2.finance.yahoo.com/v10/finance/quoteSummary/ETHUSDT
+2025-08-25 18:21:30,530 - DEBUG - params={'modules': 'financialData,quoteType,defaultKeyStatistics,assetProfile,summaryDetail', 'corsDomain': 'finance.yahoo.com', 'formatted': 'false', 'symbol': 'ETHUSDT'}
+2025-08-25 18:21:30,530 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:30,530 - DEBUG - cookie_mode = 'csrf'
+2025-08-25 18:21:30,530 - DEBUG -    Entering _get_crumb_csrf()
+2025-08-25 18:21:30,530 - DEBUG - reusing crumb
+2025-08-25 18:21:30,530 - DEBUG -    Exiting _get_crumb_csrf()
+2025-08-25 18:21:30,530 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:30,918 - DEBUG - response code=404
+2025-08-25 18:21:30,919 - DEBUG - toggling cookie strategy csrf -> basic
+2025-08-25 18:21:30,919 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:30,919 - DEBUG - cookie_mode = 'basic'
+2025-08-25 18:21:30,919 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-08-25 18:21:30,919 - DEBUG -     Entering _get_cookie_basic()
+2025-08-25 18:21:30,919 - DEBUG -      Entering _load_cookie_curlCffi()
+2025-08-25 18:21:30,919 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2025-08-25 18:21:30,920 - DEBUG -      Exiting _load_cookie_curlCffi()
+2025-08-25 18:21:30,920 - DEBUG - reusing persistent cookie
+2025-08-25 18:21:30,920 - DEBUG -     Exiting _get_cookie_basic()
+2025-08-25 18:21:30,920 - DEBUG -     Entering _get_crumb_basic()
+2025-08-25 18:21:30,920 - DEBUG -      Entering _get_cookie_basic()
+2025-08-25 18:21:30,920 - DEBUG - reusing cookie
+2025-08-25 18:21:30,920 - DEBUG -      Exiting _get_cookie_basic()
+2025-08-25 18:21:31,240 - DEBUG - crumb = '9MoFrWRCbO5'
+2025-08-25 18:21:31,240 - DEBUG -     Exiting _get_crumb_basic()
+2025-08-25 18:21:31,240 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-08-25 18:21:31,240 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:31,665 - DEBUG - response code=404
+2025-08-25 18:21:31,665 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:31,665 - DEBUG - Exiting get()
+2025-08-25 18:21:31,665 - ERROR - HTTP Error 404: 
+2025-08-25 18:21:31,665 - DEBUG - get_raw_json(): https://query1.finance.yahoo.com/v7/finance/quote?
+2025-08-25 18:21:31,665 - DEBUG - Entering get()
+2025-08-25 18:21:31,665 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:31,666 - DEBUG - url=https://query1.finance.yahoo.com/v7/finance/quote?
+2025-08-25 18:21:31,666 - DEBUG - params={'symbols': 'ETHUSDT', 'formatted': 'false'}
+2025-08-25 18:21:31,666 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:31,666 - DEBUG - cookie_mode = 'basic'
+2025-08-25 18:21:31,666 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-08-25 18:21:31,666 - DEBUG -     Entering _get_cookie_basic()
+2025-08-25 18:21:31,666 - DEBUG - reusing cookie
+2025-08-25 18:21:31,666 - DEBUG -     Exiting _get_cookie_basic()
+2025-08-25 18:21:31,666 - DEBUG -     Entering _get_crumb_basic()
+2025-08-25 18:21:31,666 - DEBUG - reusing crumb
+2025-08-25 18:21:31,666 - DEBUG -     Exiting _get_crumb_basic()
+2025-08-25 18:21:31,666 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-08-25 18:21:31,666 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:32,075 - DEBUG - response code=200
+2025-08-25 18:21:32,075 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:32,075 - DEBUG - Exiting get()
+2025-08-25 18:21:32,076 - DEBUG - Entering get()
+2025-08-25 18:21:32,076 - DEBUG -  Entering _make_request()
+2025-08-25 18:21:32,076 - DEBUG - url=https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ETHUSDT?symbol=ETHUSDT&type=trailingPegRatio&period1=1740355200&period2=1756166400
+2025-08-25 18:21:32,076 - DEBUG - params=None
+2025-08-25 18:21:32,076 - DEBUG -   Entering _get_cookie_and_crumb()
+2025-08-25 18:21:32,076 - DEBUG - cookie_mode = 'basic'
+2025-08-25 18:21:32,076 - DEBUG -    Entering _get_cookie_and_crumb_basic()
+2025-08-25 18:21:32,076 - DEBUG -     Entering _get_cookie_basic()
+2025-08-25 18:21:32,076 - DEBUG - reusing cookie
+2025-08-25 18:21:32,076 - DEBUG -     Exiting _get_cookie_basic()
+2025-08-25 18:21:32,076 - DEBUG -     Entering _get_crumb_basic()
+2025-08-25 18:21:32,076 - DEBUG - reusing crumb
+2025-08-25 18:21:32,076 - DEBUG -     Exiting _get_crumb_basic()
+2025-08-25 18:21:32,077 - DEBUG -    Exiting _get_cookie_and_crumb_basic()
+2025-08-25 18:21:32,077 - DEBUG -   Exiting _get_cookie_and_crumb()
+2025-08-25 18:21:32,484 - DEBUG - response code=200
+2025-08-25 18:21:32,485 - DEBUG -  Exiting _make_request()
+2025-08-25 18:21:32,485 - DEBUG - Exiting get()
+2025-08-25 18:21:32,485 - WARNING - No se encontró el precio actual para el símbolo ETHUSDT en Yahoo Finance.
+2025-08-25 18:21:32,485 - ERROR - No se pudo obtener el precio de ETHUSDT de ninguna de las fuentes.
+2025-08-25 18:21:32,485 - ERROR - No hay precio actual ni último precio conocido válido para ETHUSDT. Saltando cálculos detallados para este activo.
+2025-08-25 18:21:32,490 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:32,490 - INFO - Actualizando datos para LINKUSDT
+2025-08-25 18:21:32,491 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:32,894 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=LINKUSDT HTTP/1.1" 200 43
+2025-08-25 18:21:32,895 - DEBUG - Intentando obtener precio para LINKUSDT de Binance.
+2025-08-25 18:21:32,896 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:33,233 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=LINKUSDT HTTP/1.1" 200 43
+2025-08-25 18:21:33,233 - DEBUG - Precio de LINKUSDT obtenido de Binance: 23.27
+2025-08-25 18:21:33,234 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:33,713 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=LINKUSDT HTTP/1.1" 200 43
+2025-08-25 18:21:33,714 - DEBUG - Intentando obtener klines históricos para LINKUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:33,714 - DEBUG - Intentando obtener klines históricos para LINKUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:33,715 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:34,069 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=LINKUSDT&interval=1w&limit=60 HTTP/1.1" 200 3403
+2025-08-25 18:21:34,070 - DEBUG - Klines históricos para LINKUSDT en 1w obtenidos.
+2025-08-25 18:21:34,075 - DEBUG - Klines históricos para LINKUSDT en 1w obtenidos.
+2025-08-25 18:21:34,076 - DEBUG - Intentando obtener klines históricos para LINKUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:34,076 - DEBUG - Intentando obtener klines históricos para LINKUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:34,077 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:34,532 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=LINKUSDT&interval=1M&limit=60 HTTP/1.1" 200 3728
+2025-08-25 18:21:34,533 - DEBUG - Klines históricos para LINKUSDT en 1M obtenidos.
+2025-08-25 18:21:34,538 - DEBUG - Klines históricos para LINKUSDT en 1M obtenidos.
+2025-08-25 18:21:34,542 - INFO - [2025-08-25 18:21:34] ALERTA 'RSI CRITICO' procesada (Telegram deshabilitado).
+2025-08-25 18:21:34,545 - INFO - [2025-08-25 18:21:34] ALERTA 'RSI CRITICO' procesada (Telegram deshabilitado).
+2025-08-25 18:21:34,549 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:34,549 - INFO - Actualizando datos para TONUSDT
+2025-08-25 18:21:34,549 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:34,942 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=TONUSDT HTTP/1.1" 200 41
+2025-08-25 18:21:34,943 - DEBUG - Intentando obtener precio para TONUSDT de Binance.
+2025-08-25 18:21:34,944 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:35,279 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=TONUSDT HTTP/1.1" 200 41
+2025-08-25 18:21:35,280 - DEBUG - Precio de TONUSDT obtenido de Binance: 3.108
+2025-08-25 18:21:35,281 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:35,611 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=TONUSDT HTTP/1.1" 200 41
+2025-08-25 18:21:35,612 - DEBUG - Intentando obtener klines históricos para TONUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:35,612 - DEBUG - Intentando obtener klines históricos para TONUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:35,613 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:35,938 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=TONUSDT&interval=1w&limit=60 HTTP/1.1" 200 3215
+2025-08-25 18:21:35,939 - DEBUG - Klines históricos para TONUSDT en 1w obtenidos.
+2025-08-25 18:21:35,945 - DEBUG - Klines históricos para TONUSDT en 1w obtenidos.
+2025-08-25 18:21:35,946 - DEBUG - Intentando obtener klines históricos para TONUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:35,946 - DEBUG - Intentando obtener klines históricos para TONUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:35,946 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:36,278 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=TONUSDT&interval=1M&limit=60 HTTP/1.1" 200 832
+2025-08-25 18:21:36,279 - DEBUG - Klines históricos para TONUSDT en 1M obtenidos.
+2025-08-25 18:21:36,284 - DEBUG - Klines históricos para TONUSDT en 1M obtenidos.
+2025-08-25 18:21:36,284 - WARNING - No hay suficientes datos para calcular el RSI.
+2025-08-25 18:21:36,286 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:36,286 - INFO - Actualizando datos para THETAUSDT
+2025-08-25 18:21:36,287 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:36,676 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=THETAUSDT HTTP/1.1" 200 43
+2025-08-25 18:21:36,677 - DEBUG - Intentando obtener precio para THETAUSDT de Binance.
+2025-08-25 18:21:36,678 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:37,238 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=THETAUSDT HTTP/1.1" 200 43
+2025-08-25 18:21:37,238 - DEBUG - Precio de THETAUSDT obtenido de Binance: 0.751
+2025-08-25 18:21:37,239 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:37,565 - DEBUG - https://api.binance.com:443 "GET /api/v3/ticker/price?symbol=THETAUSDT HTTP/1.1" 200 43
+2025-08-25 18:21:37,565 - DEBUG - Intentando obtener klines históricos para THETAUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:37,566 - DEBUG - Intentando obtener klines históricos para THETAUSDT en intervalo 1w con límite 60.
+2025-08-25 18:21:37,567 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:37,961 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=THETAUSDT&interval=1w&limit=60 HTTP/1.1" 200 3212
+2025-08-25 18:21:37,962 - DEBUG - Klines históricos para THETAUSDT en 1w obtenidos.
+2025-08-25 18:21:37,967 - DEBUG - Klines históricos para THETAUSDT en 1w obtenidos.
+2025-08-25 18:21:37,968 - DEBUG - Intentando obtener klines históricos para THETAUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:37,968 - DEBUG - Intentando obtener klines históricos para THETAUSDT en intervalo 1M con límite 60.
+2025-08-25 18:21:37,969 - DEBUG - Starting new HTTPS connection (1): api.binance.com:443
+2025-08-25 18:21:38,287 - DEBUG - https://api.binance.com:443 "GET /api/v3/klines?symbol=THETAUSDT&interval=1M&limit=60 HTTP/1.1" 200 3544
+2025-08-25 18:21:38,288 - DEBUG - Klines históricos para THETAUSDT en 1M obtenidos.
+2025-08-25 18:21:38,293 - DEBUG - Klines históricos para THETAUSDT en 1M obtenidos.
+2025-08-25 18:21:38,296 - INFO - [2025-08-25 18:21:38] ALERTA 'RSI CRITICO' procesada (Telegram deshabilitado).
+2025-08-25 18:21:38,300 - INFO - [2025-08-25 18:21:38] ALERTA 'RSI CRITICO' procesada (Telegram deshabilitado).
+2025-08-25 18:21:38,302 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:38,305 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:38,308 - INFO - Configuración guardada en config.json
+2025-08-25 18:21:38,308 - INFO - Todos los datos de activos y totales globales actualizados. SL Total: -80.71 USD, TP Total: 332.06 USD, Capital BTC Eq: 497.79000000 BTC
+2025-08-25 18:21:38,308 - INFO - Configuración cargada desde config.json
+2025-08-25 18:21:38,309 - INFO - Configuración recargada desde el archivo.
+[H[2J[3J[91m[2025-08-25 18:21:24] ALERTA (RSI CRITICO): 📉 Alerta RSI Semanal para ETHUSDT: Tendencia a sobreventa. El RSI (66.57) está por debajo de la mayoría de los niveles manuales.[0m
+[91m[2025-08-25 18:21:27] ALERTA (RSI CRITICO): 📈 Alerta RSI Semanal para TONUSDT: Tendencia a sobrecompra. El RSI (44.02) está por encima de la mayoría de los niveles manuales.[0m
+[91m[2025-08-25 18:21:27] ALERTA (SOPORTE ALCANZADO): 🟢 **ALERTA SOPORTE**
+
+El precio de **TONUSDT** ha tocado el nivel de soporte en **$3.1800**.
+
+Precio actual: $3.1070[0m
+[91m[2025-08-25 18:21:28] ALERTA (SOPORTE ALCANZADO): 🟢 **ALERTA SOPORTE**
+
+El precio de **THETAUSDT** ha tocado el nivel de soporte en **$0.7840**.
+
+Precio actual: $0.7510[0m
+[91m[2025-08-25 18:21:34] ALERTA (RSI CRITICO): 📈 Alerta RSI Mensual para LINKUSDT: Tendencia a sobrecompra. El RSI (61.00) está por encima de la mayoría de los niveles manuales.[0m
+[91m[2025-08-25 18:21:34] ALERTA (RSI CRITICO): ⚖️ Alerta RSI Semanal para LINKUSDT: Tendencia de mercado normal. El RSI (60.80) está balanceado entre los niveles manuales.[0m
+[91m[2025-08-25 18:21:38] ALERTA (RSI CRITICO): 📉 Alerta RSI Mensual para THETAUSDT: Tendencia a sobreventa. El RSI (43.78) está por debajo de la mayoría de los niveles manuales.[0m
+[91m[2025-08-25 18:21:38] ALERTA (RSI CRITICO): 📉 Alerta RSI Semanal para THETAUSDT: Tendencia a sobreventa. El RSI (43.04) está por debajo de la mayoría de los niveles manuales.[0m
+╔═════════════════════════════════════════════════════════════════════════════════════════╗
+║                    Sistema Alerta Temprana de Trading (SATT)                            ║
+║═════════════════════════════════════════════════════════════════════════════════════════╣
+║ Capital Total: $497.79 USD (~497.79000000 BTC)                                          ║
+║ SL Global: $-80.71 USD (~-80.71000000 BTC) (16.21%)                                     ║
+║ TP Global: $332.06 USD (~332.06000000 BTC) (66.71%)                                     ║
+║ R/R Total Global: 4.11                                                                  ║
+║ SL Entradas: $-98.56 USD (~-98.56000000 BTC) (19.80%)                                   ║
+║ TP Entradas: $347.54 USD (~347.54000000 BTC) (69.82%)                                   ║
+║ R/R Entradas: 3.53                                                                      ║
+║ 1 BTC = $1.00 USD                                                                       ║
+╠═════════════════════════════════════════════════════════════════════════════════════════╣
+║                                   Activos Monitoreados                                  ║
+╠═════════════════════════════════════════════════════════════════════════════════════════╣
+║ 1. BTCUSDT | Precio: $110,082.4300 USD                                                  ║
+║ -------------------------------------------------------------------------------------   ║
+║ 2. ETHUSDT | Precio: $4,372.1200 USD                                                    ║
+║ -------------------------------------------------------------------------------------   ║
+║ 3. LINKUSDT | Precio: $23.2700 USD                                                      ║
+║ -------------------------------------------------------------------------------------   ║
+║ 4. TONUSDT | Precio: $3.1080 USD                                                        ║
+║ -------------------------------------------------------------------------------------   ║
+║ 5. THETAUSDT | Precio: $0.7510 USD                                                      ║
+║ -------------------------------------------------------------------------------------   ║
+╠═════════════════════════════════════════════════════════════════════════════════════════╣
+║        a. Añadir/Editar Activo    b. Eliminar Activo    c. Ajustar Config. General      ║
+║ d. Probar Alerta Telegram  e. Gráfica de Capital    f. Historial de alertas             ║
+║        q. Salir                                                                         ║
+╚═════════════════════════════════════════════════════════════════════════════════════════╝
+Selecciona una opción: 2025-08-25 18:23:02,749 - INFO - Saliendo del SATT. ¡Hasta luego!
+2025-08-25 18:23:02,754 - INFO - Configuración guardada en config.json

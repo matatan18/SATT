@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.tar.gz*
+ta-lib/
+satt_log.txt
+.env
