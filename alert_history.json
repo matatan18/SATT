@@ -1,105 +1,5 @@
 [
     {
-        "timestamp": "2025-08-14 10:31:42",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Mensual para BTCUSDT: Tendencia a sobrecompra. El RSI (73.47) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:42",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Semanal para BTCUSDT: Tendencia a sobrecompra. El RSI (65.64) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:42",
-        "type": "FIBO_CHOCH: Nivel Alcanzado",
-        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (4H)\n\nEl precio de BTCUSDT ha cruzado el nivel **0.618** del rango de BOS/CHOCH.\nNivel Fibo: $118971.7480\nPrecio actual: $118961.1900"
-    },
-    {
-        "timestamp": "2025-08-14 10:31:44",
-        "type": "RSI CRITICO",
-        "message": "\u2696\ufe0f Alerta RSI Mensual para ETHUSDT: Tendencia de mercado normal. El RSI (65.58) est\u00e1 balanceado entre los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:44",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para ETHUSDT: Tendencia a sobreventa. El RSI (73.49) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:46",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Mensual para LINKUSDT: Tendencia a sobrecompra. El RSI (60.84) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:46",
-        "type": "RSI CRITICO",
-        "message": "\u2696\ufe0f Alerta RSI Semanal para LINKUSDT: Tendencia de mercado normal. El RSI (63.59) est\u00e1 balanceado entre los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:48",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Semanal para TONUSDT: Tendencia a sobrecompra. El RSI (49.07) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:50",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Mensual para THETAUSDT: Tendencia a sobreventa. El RSI (44.82) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:50",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para THETAUSDT: Tendencia a sobreventa. El RSI (46.58) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-14 10:31:50",
-        "type": "FIBO_CHOCH: Nivel Alcanzado",
-        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de THETAUSDT ha cruzado el nivel **0.618** del rango de BOS/CHOCH.\nNivel Fibo: $0.8881\nPrecio actual: $0.8610"
-    },
-    {
-        "timestamp": "2025-08-15 21:28:17",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Mensual para BTCUSDT: Tendencia a sobrecompra. El RSI (73.13) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-15 21:28:17",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Semanal para BTCUSDT: Tendencia a sobrecompra. El RSI (64.11) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-15 21:28:17",
-        "type": "FIBO_CHOCH: Nivel Alcanzado",
-        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de BTCUSDT ha cruzado el nivel **0.5** del rango de BOS/CHOCH.\nNivel Fibo: $118317.5000\nPrecio actual: $117740.0000"
-    },
-    {
-        "timestamp": "2025-08-15 21:28:36",
-        "type": "FIBO_CHOCH: Nivel Alcanzado",
-        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (4H)\n\nEl precio de ETHUSDT ha cruzado el nivel **0.382** del rango de BOS/CHOCH.\nNivel Fibo: $4549.8680\nPrecio actual: $4470.5500"
-    },
-    {
-        "timestamp": "2025-08-15 21:28:36",
-        "type": "FIBO_CHOCH: Nivel Alcanzado",
-        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (4H)\n\nEl precio de ETHUSDT ha cruzado el nivel **0.5** del rango de BOS/CHOCH.\nNivel Fibo: $4476.0000\nPrecio actual: $4470.5500"
-    },
-    {
-        "timestamp": "2025-08-15 21:29:41",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Mensual para THETAUSDT: Tendencia a sobreventa. El RSI (44.54) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-15 21:29:41",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para THETAUSDT: Tendencia a sobreventa. El RSI (45.72) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-15 21:29:50",
-        "type": "RSI CRITICO",
-        "message": "\u2696\ufe0f Alerta RSI Mensual para ETHUSDT: Tendencia de mercado normal. El RSI (64.45) est\u00e1 balanceado entre los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-15 21:29:50",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para ETHUSDT: Tendencia a sobreventa. El RSI (71.97) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
         "timestamp": "2025-08-15 21:29:57",
         "type": "RSI CRITICO",
         "message": "\u2696\ufe0f Alerta RSI Mensual para LINKUSDT: Tendencia de mercado normal. El RSI (59.64) est\u00e1 balanceado entre los niveles manuales."
@@ -4998,5 +4898,105 @@
         "timestamp": "2026-03-24 18:39:50",
         "type": "BOS/CHOCH: Ruptura",
         "message": "\ud83d\udfe2 **ALERTA BOS** (1D)\n\nEl precio de ETHUSDT ha cruzado el posible BOS en $1764.0000, indicando la continuaci\u00f3n de la tendencia alcista.\nPrecio actual: $2147.0500"
+    },
+    {
+        "timestamp": "2026-04-03 10:49:27",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para BTCUSDT: Tendencia a sobreventa. El RSI (43.40) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-03 10:49:27",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (32.17) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-03 10:49:27",
+        "type": "FIBO_CHOCH: Nivel Alcanzado",
+        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de BTCUSDT ha cruzado el nivel **0.382** del rango de BOS/CHOCH.\nNivel Fibo: $67365.0820\nPrecio actual: $66520.5200"
+    },
+    {
+        "timestamp": "2026-04-03 10:49:27",
+        "type": "FIBO_CHOCH: Nivel Alcanzado",
+        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de BTCUSDT ha cruzado el nivel **0.5** del rango de BOS/CHOCH.\nNivel Fibo: $69648.5000\nPrecio actual: $66520.5200"
+    },
+    {
+        "timestamp": "2026-04-03 10:49:29",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para ETHUSDT: Tendencia a sobreventa. El RSI (43.24) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-03 10:49:29",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc8 Alerta RSI Semanal para ETHUSDT: Tendencia a sobrecompra. El RSI (36.02) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-24 23:18:38",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc8 Alerta RSI Mensual para BTCUSDT: Tendencia a sobrecompra. El RSI (49.10) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-24 23:18:38",
+        "type": "RSI CRITICO",
+        "message": "\u26a0\ufe0f Alerta RSI Semanal para BTCUSDT: Tendencia a sobrecompra fuerte. El RSI (46.18) est\u00e1 por encima de todos los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-24 23:18:38",
+        "type": "RESISTENCIA ALCANZADA",
+        "message": "\ud83d\udd34 **ALERTA RESISTENCIA**\n\nEl precio de **BTCUSDT** ha tocado el nivel de resistencia en **$77000.0000**.\n\nPrecio actual: $77574.2300"
+    },
+    {
+        "timestamp": "2026-04-24 23:18:38",
+        "type": "FIBO_CHOCH: Nivel Alcanzado",
+        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de BTCUSDT ha cruzado el nivel **0.382** del rango de BOS/CHOCH.\nNivel Fibo: $67365.0820\nPrecio actual: $77574.2300"
+    },
+    {
+        "timestamp": "2026-04-24 23:18:38",
+        "type": "FIBO_CHOCH: Nivel Alcanzado",
+        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de BTCUSDT ha cruzado el nivel **0.5** del rango de BOS/CHOCH.\nNivel Fibo: $69648.5000\nPrecio actual: $77574.2300"
+    },
+    {
+        "timestamp": "2026-04-24 23:18:38",
+        "type": "FIBO_CHOCH: Nivel Alcanzado",
+        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de BTCUSDT ha cruzado el nivel **0.618** del rango de BOS/CHOCH.\nNivel Fibo: $71931.9180\nPrecio actual: $77574.2300"
+    },
+    {
+        "timestamp": "2026-04-24 23:18:38",
+        "type": "RESISTENCIA ROTA",
+        "message": "\ud83d\udd14 \u00a1ALERTA DE RESISTENCIA! El precio de BTCUSDT ha tocado o roto la resistencia en $77,000.0000. Precio actual: $77,574.2300"
+    },
+    {
+        "timestamp": "2026-04-24 23:18:40",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para ETHUSDT: Tendencia a sobreventa. El RSI (45.85) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-24 23:18:40",
+        "type": "RSI CRITICO",
+        "message": "\u26a0\ufe0f Alerta RSI Semanal para ETHUSDT: Tendencia a sobrecompra fuerte. El RSI (43.66) est\u00e1 por encima de todos los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-26 18:54:25",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc8 Alerta RSI Mensual para BTCUSDT: Tendencia a sobrecompra. El RSI (49.46) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-26 18:54:25",
+        "type": "RSI CRITICO",
+        "message": "\u26a0\ufe0f Alerta RSI Semanal para BTCUSDT: Tendencia a sobrecompra fuerte. El RSI (47.00) est\u00e1 por encima de todos los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-26 18:54:25",
+        "type": "RESISTENCIA ALCANZADA",
+        "message": "\ud83d\udd34 **ALERTA RESISTENCIA**\n\nEl precio de **BTCUSDT** ha tocado el nivel de resistencia en **$77000.0000**.\n\nPrecio actual: $78339.2000"
+    },
+    {
+        "timestamp": "2026-04-26 18:54:26",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para ETHUSDT: Tendencia a sobreventa. El RSI (46.28) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-04-26 18:54:26",
+        "type": "RSI CRITICO",
+        "message": "\u26a0\ufe0f Alerta RSI Semanal para ETHUSDT: Tendencia a sobrecompra fuerte. El RSI (44.86) est\u00e1 por encima de todos los niveles manuales."
     }
 ]
