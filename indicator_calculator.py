@@ -2,11 +2,12 @@ import pandas as pd
 import logging
 from api_manager import APIManager
 import datetime as dt
+import yfinance as yf
 
 class IndicatorCalculator:
     def __init__(self, api_manager: APIManager):
         self.api_manager = api_manager
-        logging.info("IndicatorCalculator inicializado.")
+        logging.info("IndicatorCalculator inicializado con soporte Híbrido.")
 
     def calculate_indicators_for_asset(self, symbol: str, asset_type: str, intervals: list, limit: int) -> dict:
         data = {}
@@ -44,9 +45,7 @@ class IndicatorCalculator:
         return data
 
     def _calculate_rsi(self, df: pd.DataFrame, window: int = 14) -> float:
-        """
-        Calcula el RSI (Relative Strength Index) para un DataFrame de velas.
-        """
+        """Calcula el RSI (Relative Strength Index) para un DataFrame de velas."""
         if len(df) < window + 1:
             logging.warning("No hay suficientes datos para calcular el RSI.")
             return None
@@ -64,9 +63,7 @@ class IndicatorCalculator:
         return rsi.iloc[-1]
 
     def _calculate_macd(self, df: pd.DataFrame, fast_period: int = 12, slow_period: int = 26, signal_period: int = 9) -> tuple:
-        """
-        Calcula el MACD, la línea de señal y el histograma.
-        """
+        """Calcula el MACD, la línea de señal y el histograma."""
         if len(df) < slow_period:
             logging.warning("No hay suficientes datos para calcular el MACD.")
             return (None, None, None)
@@ -80,10 +77,7 @@ class IndicatorCalculator:
         return macd_line, macd_signal, macd_hist
 
     def calculate_manual_fibonacci(self, choch_precio: float, bos_precio: float) -> dict:
-        """
-        Calcula los niveles de retroceso de Fibonacci basándose en los precios de CHOCH y BOS.
-        CHOCH es 100% y BOS es 0%.
-        """
+        """Calcula los niveles de retroceso de Fibonacci."""
         try:
             niveles = {
                 "100%": choch_precio,
@@ -101,32 +95,60 @@ class IndicatorCalculator:
 
     def _get_historical_ohlcv(self, symbol: str, interval: str, limit: int, asset_type: str) -> pd.DataFrame:
         """
-        Obtiene datos OHLCV históricos desde la API y los convierte a un DataFrame de Pandas.
+        Obtiene datos OHLCV históricos híbridos. Primero intenta con Binance para Criptos,
+        y si falla o el tipo es acción, usa Yahoo Finance como motor de respaldo.
         """
-        logging.debug(f"Intentando obtener klines históricos para {symbol} en intervalo {interval} con límite {limit}.")
+        logging.debug(f"Buscando histórico para {symbol} ({asset_type}) en intervalo {interval} (límite {limit}).")
+        
+        # --- INTENTO 1: BINANCE (Para Crypto) ---
+        if asset_type.lower() != 'stock':
+            try:
+                klines_raw = self.api_manager.get_historical_klines(symbol, interval, limit, asset_type)
+                if klines_raw:
+                    df = pd.DataFrame(klines_raw, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
+                    df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+                    df['open'] = pd.to_numeric(df['open'])
+                    df['high'] = pd.to_numeric(df['high'])
+                    df['low'] = pd.to_numeric(df['low'])
+                    df['close'] = pd.to_numeric(df['close'])
+                    df['volume'] = pd.to_numeric(df['volume'])
+                    df = df[['timestamp', 'open', 'high', 'low', 'close', 'volume']].copy()
+                    df = df.set_index('timestamp').sort_index()
+                    return df
+            except Exception as e:
+                logging.info(f"Fallo en Binance para {symbol} o no se encontró el activo. Pasando a Yahoo Finance... [{e}]")
+
+        # --- INTENTO 2: YAHOO FINANCE (Para Acciones y Respaldo) ---
         try:
-            klines_raw = self.api_manager.get_historical_klines(symbol, interval, limit, asset_type)
-
-            if not klines_raw:
-                logging.warning(f"No se obtuvieron datos históricos para {symbol} ({asset_type}) con intervalo {interval} y límite {limit}.")
-                return pd.DataFrame() 
-
-            df = pd.DataFrame(klines_raw, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
-
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-            df['open'] = pd.to_numeric(df['open'])
-            df['high'] = pd.to_numeric(df['high'])
-            df['low'] = pd.to_numeric(df['low'])
-            df['close'] = pd.to_numeric(df['close'])
-            df['volume'] = pd.to_numeric(df['volume'])
+            # Mapeo de intervalos de Binance a Yahoo Finance
+            yf_intervals = {'1m': '1m', '5m': '5m', '15m': '15m', '1h': '1h', '1d': '1d', '1w': '1wk', '1M': '1mo'}
+            yf_interval = yf_intervals.get(interval, '1d')
             
-            df = df[['timestamp', 'open', 'high', 'low', 'close', 'volume']].copy()
-            df = df.set_index('timestamp')
-            df = df.sort_index()
-
-            logging.debug(f"Klines históricos para {symbol} en {interval} obtenidos.")
-            return df
+            # Estimación burda del periodo según el límite para no descargar de más
+            periodo = "1mo"
+            if yf_interval == '1d': periodo = "3mo" if limit <= 60 else "6mo"
+            elif yf_interval in ['1wk', '1mo']: periodo = "max"
+            else: periodo = "7d" # Intervalos de minutos tienen restricciones de días en Yahoo
             
+            # Adaptamos formato (ej: por si ingresaste BTC/USD en vez de BTC-USD)
+            yf_ticker = symbol.upper().replace("/", "-")
+            
+            logging.info(f"Descargando históricos de Yahoo Finance para {yf_ticker} (Intervalo: {yf_interval}, Periodo: {periodo})")
+            ticker_obj = yf.Ticker(yf_ticker)
+            history = ticker_obj.history(period=periodo, interval=yf_interval)
+            
+            if not history.empty:
+                # Estandarizamos el DataFrame al formato del resto del bot
+                df_yf = history.reset_index()
+                df_yf.rename(columns={'Date': 'timestamp', 'Datetime': 'timestamp', 'Open': 'open', 'High': 'high', 'Low': 'low', 'Close': 'close', 'Volume': 'volume'}, inplace=True)
+                df_yf['timestamp'] = pd.to_datetime(df_yf['timestamp'])
+                df_yf = df_yf[['timestamp', 'open', 'high', 'low', 'close', 'volume']].copy()
+                df_yf = df_yf.set_index('timestamp').sort_index()
+                
+                # Cortamos al límite solicitado para no saturar los indicadores
+                return df_yf.tail(limit)
+                
         except Exception as e:
-            logging.error(f"Error al obtener o procesar datos históricos para {symbol} ({asset_type}) {interval}: {e}", exc_info=True)
-            return pd.DataFrame()
+            logging.error(f"Error crítico al construir histórico en Yahoo Finance para {symbol}: {e}")
+            
+        return pd.DataFrame()
