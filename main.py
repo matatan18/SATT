@@ -277,8 +277,6 @@ class SATT:
                     if old_update_interval != self.update_interval:
                         logging.info(f"Intervalo de actualización cambiado de {old_update_interval}s a {self.update_interval}s.")
                     self.update_all_asset_data()
-                elif choice == 'd':
-                    self.ui_manager.test_telegram_alert_menu()
                 elif choice == 'e':
                     self.ui_manager.display_capital_graph()
                 elif choice == 'f': 

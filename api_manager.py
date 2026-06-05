@@ -171,17 +171,6 @@ class APIManager:
                 return None
         return None
 
-    def send_telegram_message(self, bot_token, chat_id, message):
-        url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-        payload = {'chat_id': chat_id, 'text': message}
-        try:
-            response = requests.post(url, data=payload, timeout=10)
-            response.raise_for_status()
-            return True
-        except RequestException as e:
-            logging.error(f"Error al enviar mensaje de Telegram: {e}")
-            return False
-
     def is_valid_symbol(self, symbol: str) -> bool:
         if self.get_crypto_price(symbol) is not None:
             return True

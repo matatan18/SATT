@@ -10,9 +10,6 @@ class ConfigManager:
     Gestión de la configuración del sistema y persistencia en disco.
     """
     _default_alert_settings = {
-        "telegram_alerts_enabled": False,
-        "telegram_chat_id": "",
-        "telegram_bot_token": "",
         "enabled_alert_types": [
             "SL ALCANZADO", "TP ALCANZADO", "RSI CRITICO", "RSI CAMBIO ESTATUS ALCISTA",
             "RSI CAMBIO ESTATUS BAJISTA", "BOS/CHOCH: Confirmación de Ruptura",
@@ -28,7 +25,6 @@ class ConfigManager:
             "RSI CAMBIO ESTATUS BAJISTA": {"description": "Alerta cuando el RSI indica un cambio a estatus bajista."},
             "BOS/CHOCH: Confirmación de Ruptura": {"description": "Alerta cuando el precio cruza un nivel de BOS/CHOCH."},
             "FIBO (Retroceso/Extensión): Nivel Alcanzado": {"description": "Alerta cuando el precio toca un nivel de Fibonacci (0.382, 0.5, 0.618, 0.786)."},
-            "MENSAJE DE PRUEBA": {"description": "Mensaje de prueba para verificar la integración de Telegram."},
             "ERROR CRITICO": {"description": "Alertas de errores críticos del sistema."},
             "MACD Mensual BITCOIN": {"description": "Alerta sobre el cruce MACD/Signal para Bitcoin en temporalidad mensual."},
             "FIBO_MANUAL: Nivel Alcanzado": {"description": "Alerta cuando el precio alcanza un nivel de Fibonacci calculado con máximos/mínimos locales manuales."},

@@ -24,7 +24,6 @@ class AlertManager:
         self.api_manager = api_manager
         self.ui_manager = ui_manager
         self.alert_history = self._load_alert_history()
-        self.telegram_send_lock = threading.Lock()
         
         # Diccionarios para evitar alertas duplicadas
         self.last_rsi_status = {}
@@ -348,9 +347,6 @@ class AlertManager:
         self._save_alert_history()
         
         alert_config = self.config_manager.get_alert_settings()
-        telegram_enabled = alert_config.get('telegram_alerts_enabled', False)
-        chat_id = alert_config.get('telegram_chat_id', '')
-        bot_token = alert_config.get('telegram_bot_token', '')
         enabled_alert_types = alert_config.get('enabled_alert_types', [])
         
         # Muestra la alerta en el terminal con color rojo
@@ -358,52 +354,8 @@ class AlertManager:
         print(colored_message)
 
         if alert_type not in enabled_alert_types:
-            logging.info(f"[{timestamp}] ALERTA '{alert_type}' no enviada a Telegram (tipo deshabilitado).")
+            logging.info(f"[{timestamp}] ALERTA '{alert_type}' omitida (tipo de alerta deshabilitado en la configuración).")
             return
-
-        if telegram_enabled and chat_id and bot_token:
-            telegram_thread = threading.Thread(
-                target=self._send_telegram_message_threaded,
-                args=(bot_token, chat_id, f"🚨 SATT ALERTA: {alert_type}\n\n{message}")
-            )
-            telegram_thread.start()
-        else:
-            if telegram_enabled:
-                logging.error(f"[{timestamp}] Advertencia: Configuración de Telegram (chat_id o bot_token) incompleta.")
-            else:
-                logging.info(f"[{timestamp}] ALERTA '{alert_type}' procesada (Telegram deshabilitado).")
-
-    def _send_telegram_message_threaded(self, bot_token: str, chat_id: str, text: str):
-        with self.telegram_send_lock:
-            url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-            payload = {
-                'chat_id': chat_id,
-                'text': text,
-                'parse_mode': 'HTML'
-            }
-            try:
-                response = requests.post(url, data=payload, timeout=10)
-                response.raise_for_status()
-                logging.info(f"Mensaje de Telegram enviado con éxito a chat ID {chat_id}.")
-            except requests.exceptions.Timeout:
-                logging.error(f"Error: Tiempo de espera agotado al enviar mensaje a Telegram (chat ID: {chat_id}).")
-            except requests.exceptions.RequestException as e:
-                error_detail = ""
-                if hasattr(e, 'response') and e.response is not None:
-                    try:
-                        error_json = e.response.json()
-                        error_detail = f" Respuesta de Telegram: {error_json.get('description', e.response.text)}"
-                    except json.JSONDecodeError:
-                        error_detail = f" Respuesta de Telegram (texto): {e.response.text}"
-                    finally:
-                        logging.error(f"Error al enviar mensaje a Telegram (chat ID: {chat_id}): {error_detail}")
-                else:
-                    error_detail = str(e)
-                logging.error(f"Error al enviar mensaje a Telegram (chat ID: {chat_id}): {error_detail}")
-            except Exception as e:
-                logging.error(f"Ocurrió un error inesperado al enviar la alerta a Telegram: {e}")
-            finally:
-                time.sleep(0.5)
 
     def display_alert_history(self):
         if self.ui_manager:
