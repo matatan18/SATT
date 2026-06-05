@@ -387,8 +387,8 @@ class UserInterface:
 
         print("╠═════════════════════════════════════════════════════════════════════════════════════════╣")
         print("║        a. Añadir/Editar Activo    b. Eliminar Activo    c. Ajustar Config. General      ║")
-        print("║ d. Probar Alerta Telegram  e. Gráfica de Capital    f. Historial de alertas             ║")
-        print("║        q. Salir                                                                         ║")
+        print("║ d.Captura de datos  e. Gráfica de Capital    f. Historial de alertas G. entrenamiento   ║")
+        print("║ H. monitoreo tiempo real       q. Salir                                                 ║")
         print("╚═════════════════════════════════════════════════════════════════════════════════════════╝")
 
     def get_user_choice(self):
@@ -720,39 +720,6 @@ class UserInterface:
         # --- Parte 1: Ajustar la Configuración General ---
         print("\n--- Ajustar Configuración General ---")
         
-        # Opción para activar/desactivar alertas de Telegram
-        telegram_alerts_enabled = general_settings.get('telegram_alerts_enabled', False)
-        status_text = "Habilitadas" if telegram_alerts_enabled else "Deshabilitadas"
-        new_status_input = input(f"Alertas de Telegram actualmente: {status_text}. ¿Deseas cambiarlas? (s/n, dejar vacío para no cambiar): ").strip().lower()
-        
-        if new_status_input == 's':
-            general_settings['telegram_alerts_enabled'] = not telegram_alerts_enabled
-            self.config_manager.save_config()
-            new_status_text = "Habilitadas" if general_settings['telegram_alerts_enabled'] else "Deshabilitadas"
-            self.display_message(f"\nAlertas de Telegram ahora: {new_status_text}.")
-            self.wait_for_user_input()
-            return
-        
-        capital_usd_input = input(f"Ingrese el capital total en USD ({general_settings.get('capital_usd') if general_settings.get('capital_usd') is not None else 'N/A'}): ").strip()
-        capital_usd_prev = general_settings.get('capital_usd')
-        
-        capital_changed = False
-        if capital_usd_input:
-            try:
-                new_capital_usd = float(capital_usd_input)
-                general_settings['capital_usd'] = new_capital_usd
-                capital_changed = True
-            except ValueError:
-                print("Valor inválido. Se mantendrá el valor actual.")
-
-        new_telegram_chat_id = input(f"Ingrese el Chat ID de Telegram ({general_settings.get('telegram_chat_id', 'N/A')}): ").strip()
-        if new_telegram_chat_id:
-            general_settings['telegram_chat_id'] = new_telegram_chat_id
-        
-        new_telegram_bot_token = input(f"Ingrese el Token del Bot de Telegram ({general_settings.get('telegram_bot_token', 'N/A')}): ").strip()
-        if new_telegram_bot_token:
-            general_settings['telegram_bot_token'] = new_telegram_bot_token
-
         self.config_manager.save_config()
         self.display_message("\nConfiguración general guardada exitosamente.")
         self.wait_for_user_input()
@@ -813,36 +780,6 @@ class UserInterface:
                     break
                 else:
                     self.display_message("Opción no válida. Por favor, ingrese 's' o 'n'.")
-
-
-    def test_telegram_alert_menu(self):
-        """Menú para probar la configuración de la alerta de Telegram."""
-        self.persistent_alerts = []  # Limpiar alertas al entrar a otro menú
-        self.clear_screen()
-        self.display_header("<<< PROBAR ALERTA DE TELEGRAM >>>")
-        general_settings = self.config_manager.get_general_settings()
-        
-        telegram_enabled = general_settings.get('telegram_alerts_enabled')
-        chat_id = general_settings.get('telegram_chat_id')
-        bot_token = general_settings.get('telegram_bot_token')
-        
-        if not telegram_enabled:
-            self.display_message("Las alertas de Telegram están deshabilitadas en la configuración general.")
-        elif not chat_id or not bot_token:
-            self.display_message("Faltan el Chat ID o el Bot Token en la configuración. No se puede probar la alerta.")
-        else:
-            self.display_message("Enviando un mensaje de prueba a Telegram...")
-            test_message = "✅ Alerta de prueba de SATT enviada con éxito."
-            try:
-                url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-                payload = {'chat_id': chat_id, 'text': test_message, 'parse_mode': 'HTML'}
-                response = requests.post(url, data=payload, timeout=10)
-                response.raise_for_status()
-                self.display_message("¡Mensaje de prueba enviado con éxito!")
-            except requests.exceptions.RequestException as e:
-                self.display_message(f"Error al enviar el mensaje de prueba: {e}")
-        
-        self.wait_for_user_input()
 
     def display_message(self, message):
         print(message)

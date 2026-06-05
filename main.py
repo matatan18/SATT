@@ -4,6 +4,19 @@ import logging
 import sys
 from datetime import datetime
 
+# --- PARCHE GLOBAL PARA EVITAR EL ERROR 429 EN YAHOO FINANCE ---
+import yfinance as yf
+import requests
+
+custom_session = requests.Session()
+custom_session.headers.update({
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.5',
+})
+yf.set_tz_cache_location(None)  # Desactiva escrituras innecesarias en caché de zona horaria
+# ---------------------------------------------------------------
+
 # Configuración de logging (asegúrate de que esté en DEBUG)
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -115,20 +128,16 @@ class SATT:
         previous_price = asset_config.get('previous_price', 0.0)
 
         # Añadido: Salir de la función si no hay un precio anterior válido.
-        # previous_price ya es 0.0 o un número en la primera iteración,
-        # pero el error ocurre con el precio actual.
         if current_price is None or previous_price is None or current_price <= 0 or previous_price <= 0:
             logging.warning(f"No se pudo verificar las alertas para {symbol}: El precio actual ({current_price}) o anterior ({previous_price}) no es válido.")
             return
 
         # Chequeo de soportes
         for support in asset_config.get('manual_supports', []):
-            # Lógica corregida para cruce a la baja (soporte roto)
             if previous_price > support >= current_price:
                 message = f"🔔 ¡ALERTA DE SOPORTE! El precio de {symbol} ha tocado o roto el soporte en ${support:,.4f}. Precio actual: ${current_price:,.4f}"
                 logging.info(message)
                 self.alert_manager.check_and_send_alert(message, "SOPORTE ROTO")
-            # Lógica corregida para rebote en el soporte
             elif previous_price < support and current_price >= support:
                 message = f"🟢 ¡ALERTA DE REBOTE EN SOPORTE! El precio de {symbol} ha rebotado en el soporte de ${support:,.4f}. Precio actual: ${current_price:,.4f}"
                 logging.info(message)
@@ -136,12 +145,10 @@ class SATT:
     
         # Chequeo de resistencias
         for resistance in asset_config.get('manual_resistances', []):
-            # Lógica corregida para cruce al alza (resistencia rota)
             if previous_price < resistance <= current_price:
                 message = f"🔔 ¡ALERTA DE RESISTENCIA! El precio de {symbol} ha tocado o roto la resistencia en ${resistance:,.4f}. Precio actual: ${current_price:,.4f}"
                 logging.info(message)
                 self.alert_manager.check_and_send_alert(message, "RESISTENCIA ROTA")
-            # Lógica corregida para rebote en la resistencia
             elif previous_price > resistance and current_price <= resistance:
                 message = f"🔴 ¡ALERTA DE REBOTE EN RESISTENCIA! El precio de {symbol} ha rebotado en la resistencia de ${resistance:,.4f}. Precio actual: ${current_price:,.4f}"
                 logging.info(message)
@@ -191,7 +198,6 @@ class SATT:
                 continue
             
             # Lógica para indicadores y alertas
-            # Obtener el tipo de activo de forma dinámica para asegurar la fuente correcta
             asset_type = self.api_manager.get_asset_type(symbol)
             intervals_to_calculate = ['1w', '1M']
             
@@ -229,7 +235,7 @@ class SATT:
             # Llamar a la función de alertas unificada con la configuración completa del activo
             self.alert_manager.check_alerts(asset_config)
             
-            # NUEVA LÓGICA: Llamar a la función para chequear alertas manuales
+            # Llamar a la función para chequear alertas manuales
             self._check_manual_alerts(asset_config, current_price)
 
             self.config_manager.update_asset(symbol, asset_config)
