@@ -1,30 +1,5 @@
 [
     {
-        "timestamp": "2025-08-25 10:52:22",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (57.51) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 10:52:22",
-        "type": "SOPORTE ALCANZADO",
-        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$115663.0000**.\n\nPrecio actual: $112162.3900"
-    },
-    {
-        "timestamp": "2025-08-25 10:58:47",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Mensual para LINKUSDT: Tendencia a sobrecompra. El RSI (62.22) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 10:58:47",
-        "type": "RSI CRITICO",
-        "message": "\u2696\ufe0f Alerta RSI Semanal para LINKUSDT: Tendencia de mercado normal. El RSI (63.84) est\u00e1 balanceado entre los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 10:58:52",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Mensual para THETAUSDT: Tendencia a sobreventa. El RSI (44.25) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
         "timestamp": "2025-08-25 10:58:52",
         "type": "RSI CRITICO",
         "message": "\ud83d\udcc9 Alerta RSI Semanal para THETAUSDT: Tendencia a sobreventa. El RSI (44.78) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
@@ -4998,5 +4973,30 @@
         "timestamp": "2026-06-05 23:50:43",
         "type": "SOPORTE ALCANZADO",
         "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$66000.0000**.\n\nPrecio actual: $60708.3300"
+    },
+    {
+        "timestamp": "2026-06-05 23:54:22",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para BTCUSDT: Tendencia a sobreventa. El RSI (41.37) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-05 23:54:22",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (32.42) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-05 23:54:22",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$64000.0000**.\n\nPrecio actual: $60713.5800"
+    },
+    {
+        "timestamp": "2026-06-05 23:54:22",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$66000.0000**.\n\nPrecio actual: $60713.5800"
+    },
+    {
+        "timestamp": "2026-06-06 00:42:46",
+        "type": "FIBO_CHOCH: Nivel Alcanzado",
+        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de RGTI ha cruzado el nivel **0.618** del rango de BOS/CHOCH.\nNivel Fibo: $20.2676\nPrecio actual: $20.6800"
     }
 ]
