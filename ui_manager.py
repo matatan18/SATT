@@ -708,6 +708,7 @@ class UserInterface:
         self.wait_for_user_input()
 
     def adjust_general_config_menu(self):
+        capital_changed = False
         """
         Menú para ajustar la configuración general y registrar capital.
         Ahora el valor de capital en USD se usa para el registro histórico.
@@ -720,6 +721,15 @@ class UserInterface:
         # --- Parte 1: Ajustar la Configuración General ---
         print("\n--- Ajustar Configuración General ---")
         
+        capital_usd_input = input(f"Ingrese el capital total en USD (Actual: ${general_settings.get('capital_usd', 0):,.2f}): ").strip()
+        if capital_usd_input:
+            try:
+                new_capital_usd = float(capital_usd_input)
+                general_settings['capital_usd'] = new_capital_usd
+                capital_changed = True
+            except ValueError:
+                print("Valor inválido. Se mantendrá el valor actual.")
+
         self.config_manager.save_config()
         self.display_message("\nConfiguración general guardada exitosamente.")
         self.wait_for_user_input()
