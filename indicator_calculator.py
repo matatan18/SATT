@@ -126,9 +126,12 @@ class IndicatorCalculator:
             
             # Estimación burda del periodo según el límite para no descargar de más
             periodo = "1mo"
-            if yf_interval == '1d': periodo = "3mo" if limit <= 60 else "6mo"
-            elif yf_interval in ['1wk', '1mo']: periodo = "max"
-            else: periodo = "7d" # Intervalos de minutos tienen restricciones de días en Yahoo
+            if yf_interval == '1d': 
+                periodo = "3mo" if limit <= 60 else "6mo"
+            elif yf_interval in ['1wk', '1mo']: 
+                periodo = "5y"
+            else: 
+                periodo = "7d" # Intervalos de minutos tienen restricciones de días en Yahoo
             
             # Adaptamos formato (ej: por si ingresaste BTC/USD en vez de BTC-USD)
             yf_ticker = symbol.upper().replace("/", "-")

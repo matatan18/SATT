@@ -236,11 +236,14 @@ class UserInterface:
                         print(format_line(line2))
             # Monitoreo de RSI
             if asset.get('rsi_enabled', False):
-                rsi_mensual_display = f"{rsi_monthly_value:.2f}" if rsi_monthly_value is not None else "N/A"
-                rsi_semanal_display = f"{rsi_weekly_value:.2f}" if rsi_weekly_value is not None else "N/A"
-                print(format_line(f"  RSI Mensual: {rsi_mensual_display} - Estado: {rsi_monthly_state}"))
-                print(format_line(f"  RSI Semanal: {rsi_semanal_display} - Estado: {rsi_weekly_state}"))
+                rsi_m_list = asset.get('rsi_monthly_manual_values', [])
+                rsi_s_list = asset.get('rsi_weekly_manual_values', [])
+                rsi_mensual_display = ", ".join(map(str, rsi_m_list)) if rsi_m_list else "Sin niveles"
+                rsi_semanal_display = ", ".join(map(str, rsi_s_list)) if rsi_s_list else "Sin niveles"
+                print(format_line(f"  RSI Mensual: {rsi_mensual_display} - Estado: Zonas Manuales"))
+                print(format_line(f"  RSI Semanal: {rsi_semanal_display} - Estado: Zonas Manuales"))
             else:
+                print(format_line("  Monitoreo RSI: Deshabilitado"))
                 print(format_line("  Monitoreo RSI: Deshabilitado"))
             
             # Monitoreo de BOS/CHOCH
