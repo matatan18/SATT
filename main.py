@@ -4,6 +4,19 @@ import logging
 import sys
 from datetime import datetime
 
+# --- PARCHE DE COMPATIBILIDAD ANTES DE YFINANCE (PC Y TERMUX COEXISTIENDO) ---
+try:
+    import curl_cffi
+except (ImportError, AttributeError):
+    # Si la librería falla o está incompleta (Entorno Termux Python 3.13), emulamos sus atributos básicos
+    from types import ModuleType
+    mock_curl = ModuleType('curl_cffi')
+    mock_curl.requests = ModuleType('requests')
+    import requests as real_requests
+    mock_curl.requests.exceptions = real_requests.exceptions
+    sys.modules['curl_cffi'] = mock_curl
+    sys.modules['curl_cffi.requests'] = mock_curl.requests
+
 # --- PARCHE GLOBAL PARA EVITAR EL ERROR 429 EN YAHOO FINANCE ---
 import yfinance as yf
 import requests
@@ -202,7 +215,7 @@ class SATT:
             intervals_to_calculate = ['1w', '1M']
             
             indicators_data = self.indicator_calculator.calculate_indicators_for_asset(
-                symbol, 
+                symbol,  
                 asset_type,
                 intervals_to_calculate,
                 60
@@ -279,7 +292,7 @@ class SATT:
                     self.update_all_asset_data()
                 elif choice == 'e':
                     self.ui_manager.display_capital_graph()
-                elif choice == 'f': 
+                elif choice == 'f':  
                     self.ui_manager.display_alert_history_menu()
                 elif choice == 'q':
                     logging.info("Saliendo del SATT. ¡Hasta luego!")
