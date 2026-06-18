@@ -5,15 +5,19 @@ import sys
 from datetime import datetime
 
 # --- PARCHE DE COMPATIBILIDAD ANTES DE YFINANCE (PC Y TERMUX COEXISTIENDO) ---
+# Forzamos la creación del atributo faltante si curl_cffi viene roto en Termux
 try:
-    import curl_cffi
-except (ImportError, AttributeError):
-    # Si la librería falla o está incompleta (Entorno Termux Python 3.13), emulamos sus atributos básicos
+    import curl_cffi.requests as _mod
+    if not hasattr(_mod, 'exceptions'):
+        import requests as _real_req
+        _mod.exceptions = _real_req.exceptions
+except Exception:
+    # Si de plano no se puede ni importar (o no existe), creamos el cascarón en memoria
     from types import ModuleType
     mock_curl = ModuleType('curl_cffi')
     mock_curl.requests = ModuleType('requests')
-    import requests as real_requests
-    mock_curl.requests.exceptions = real_requests.exceptions
+    import requests as _real_req
+    mock_curl.requests.exceptions = _real_req.exceptions
     sys.modules['curl_cffi'] = mock_curl
     sys.modules['curl_cffi.requests'] = mock_curl.requests
 
