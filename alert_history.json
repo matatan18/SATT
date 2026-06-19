@@ -1,100 +1,5 @@
 [
     {
-        "timestamp": "2025-08-25 23:51:58",
-        "type": "SOPORTE ALCANZADO",
-        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$111997.0000**.\n\nPrecio actual: $109874.2700"
-    },
-    {
-        "timestamp": "2025-08-25 23:51:59",
-        "type": "RSI CRITICO",
-        "message": "\u2696\ufe0f Alerta RSI Mensual para ETHUSDT: Tendencia de mercado normal. El RSI (64.07) est\u00e1 balanceado entre los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:51:59",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para ETHUSDT: Tendencia a sobreventa. El RSI (67.06) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:52:01",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Mensual para LINKUSDT: Tendencia a sobrecompra. El RSI (60.91) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:52:01",
-        "type": "RSI CRITICO",
-        "message": "\u2696\ufe0f Alerta RSI Semanal para LINKUSDT: Tendencia de mercado normal. El RSI (60.60) est\u00e1 balanceado entre los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:52:02",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Semanal para TONUSDT: Tendencia a sobrecompra. El RSI (44.68) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:52:02",
-        "type": "SOPORTE ALCANZADO",
-        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **TONUSDT** ha tocado el nivel de soporte en **$3.1800**.\n\nPrecio actual: $3.1560"
-    },
-    {
-        "timestamp": "2025-08-25 23:52:04",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Mensual para THETAUSDT: Tendencia a sobreventa. El RSI (43.90) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:52:04",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para THETAUSDT: Tendencia a sobreventa. El RSI (43.51) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:52:04",
-        "type": "SOPORTE ALCANZADO",
-        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **THETAUSDT** ha tocado el nivel de soporte en **$0.7840**.\n\nPrecio actual: $0.7660"
-    },
-    {
-        "timestamp": "2025-08-26 00:14:00",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Mensual para BTCUSDT: Tendencia a sobrecompra. El RSI (68.54) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-26 00:14:00",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (55.28) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-26 00:14:00",
-        "type": "SOPORTE ALCANZADO",
-        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$115663.0000**.\n\nPrecio actual: $110128.4200"
-    },
-    {
-        "timestamp": "2025-08-26 00:14:00",
-        "type": "SOPORTE ALCANZADO",
-        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$111997.0000**.\n\nPrecio actual: $110128.4200"
-    },
-    {
-        "timestamp": "2025-08-26 00:14:02",
-        "type": "RSI CRITICO",
-        "message": "\u2696\ufe0f Alerta RSI Mensual para ETHUSDT: Tendencia de mercado normal. El RSI (64.23) est\u00e1 balanceado entre los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-26 00:14:02",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para ETHUSDT: Tendencia a sobreventa. El RSI (67.57) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-26 00:14:02",
-        "type": "FIBO_CHOCH: Nivel Alcanzado",
-        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (4H)\n\nEl precio de ETHUSDT ha cruzado el nivel **0.618** del rango de BOS/CHOCH.\nNivel Fibo: $4419.5300\nPrecio actual: $4431.2400"
-    },
-    {
-        "timestamp": "2025-08-26 00:14:03",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Mensual para LINKUSDT: Tendencia a sobrecompra. El RSI (60.94) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-26 00:14:03",
-        "type": "RSI CRITICO",
-        "message": "\u2696\ufe0f Alerta RSI Semanal para LINKUSDT: Tendencia de mercado normal. El RSI (60.65) est\u00e1 balanceado entre los niveles manuales."
-    },
-    {
         "timestamp": "2025-08-26 00:14:05",
         "type": "RSI CRITICO",
         "message": "\ud83d\udcc8 Alerta RSI Semanal para TONUSDT: Tendencia a sobrecompra. El RSI (44.73) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
@@ -4998,5 +4903,100 @@
         "timestamp": "2026-06-19 18:48:41",
         "type": "SOPORTE ALCANZADO",
         "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **ADBE** ha tocado el nivel de soporte en **$208.0000**.\n\nPrecio actual: $195.1600"
+    },
+    {
+        "timestamp": "2026-06-19 18:59:42",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para BTCUSDT: Tendencia a sobreventa. El RSI (42.41) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-19 18:59:42",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (35.20) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-19 18:59:42",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$64000.0000**.\n\nPrecio actual: $63310.0000"
+    },
+    {
+        "timestamp": "2026-06-19 18:59:42",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$66000.0000**.\n\nPrecio actual: $63310.0000"
+    },
+    {
+        "timestamp": "2026-06-19 18:59:45",
+        "type": "RESISTENCIA ALCANZADA",
+        "message": "\ud83d\udd34 **ALERTA RESISTENCIA**\n\nEl precio de **SOFI** ha tocado el nivel de resistencia en **$17.2000**.\n\nPrecio actual: $17.9100"
+    },
+    {
+        "timestamp": "2026-06-19 18:59:47",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **ADBE** ha tocado el nivel de soporte en **$236.5100**.\n\nPrecio actual: $195.1600"
+    },
+    {
+        "timestamp": "2026-06-19 18:59:47",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **ADBE** ha tocado el nivel de soporte en **$208.0000**.\n\nPrecio actual: $195.1600"
+    },
+    {
+        "timestamp": "2026-06-19 19:11:01",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para BTCUSDT: Tendencia a sobreventa. El RSI (42.40) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-19 19:11:02",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (35.18) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-19 19:11:02",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$64000.0000**.\n\nPrecio actual: $63276.4100"
+    },
+    {
+        "timestamp": "2026-06-19 19:11:02",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$66000.0000**.\n\nPrecio actual: $63276.4100"
+    },
+    {
+        "timestamp": "2026-06-19 19:11:05",
+        "type": "RESISTENCIA ALCANZADA",
+        "message": "\ud83d\udd34 **ALERTA RESISTENCIA**\n\nEl precio de **SOFI** ha tocado el nivel de resistencia en **$17.2000**.\n\nPrecio actual: $17.9100"
+    },
+    {
+        "timestamp": "2026-06-19 19:11:08",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **ADBE** ha tocado el nivel de soporte en **$236.5100**.\n\nPrecio actual: $195.1600"
+    },
+    {
+        "timestamp": "2026-06-19 19:11:08",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **ADBE** ha tocado el nivel de soporte en **$208.0000**.\n\nPrecio actual: $195.1600"
+    },
+    {
+        "timestamp": "2026-06-19 19:15:29",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para BTCUSDT: Tendencia a sobreventa. El RSI (42.40) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-19 19:15:29",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (35.18) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-19 19:15:29",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$64000.0000**.\n\nPrecio actual: $63280.4900"
+    },
+    {
+        "timestamp": "2026-06-19 19:15:29",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$66000.0000**.\n\nPrecio actual: $63280.4900"
+    },
+    {
+        "timestamp": "2026-06-19 19:15:32",
+        "type": "RESISTENCIA ALCANZADA",
+        "message": "\ud83d\udd34 **ALERTA RESISTENCIA**\n\nEl precio de **SOFI** ha tocado el nivel de resistencia en **$17.2000**.\n\nPrecio actual: $17.9100"
     }
 ]
