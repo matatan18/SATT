@@ -1,40 +1,5 @@
 [
     {
-        "timestamp": "2025-08-25 23:34:37",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Mensual para THETAUSDT: Tendencia a sobreventa. El RSI (43.94) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:34:37",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para THETAUSDT: Tendencia a sobreventa. El RSI (43.67) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:34:37",
-        "type": "SOPORTE ALCANZADO",
-        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **THETAUSDT** ha tocado el nivel de soporte en **$0.7840**.\n\nPrecio actual: $0.7710"
-    },
-    {
-        "timestamp": "2025-08-25 23:34:37",
-        "type": "FIBO_CHOCH: Nivel Alcanzado",
-        "message": "\ud83d\udfe1 **ALERTA FIBO ESTRUCTURA** (1D)\n\nEl precio de THETAUSDT ha cruzado el nivel **0.382** del rango de BOS/CHOCH.\nNivel Fibo: $0.7659\nPrecio actual: $0.7710"
-    },
-    {
-        "timestamp": "2025-08-25 23:51:58",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc8 Alerta RSI Mensual para BTCUSDT: Tendencia a sobrecompra. El RSI (68.37) est\u00e1 por encima de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:51:58",
-        "type": "RSI CRITICO",
-        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (55.02) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
-    },
-    {
-        "timestamp": "2025-08-25 23:51:58",
-        "type": "SOPORTE ALCANZADO",
-        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$115663.0000**.\n\nPrecio actual: $109874.2700"
-    },
-    {
         "timestamp": "2025-08-25 23:51:58",
         "type": "SOPORTE ALCANZADO",
         "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$111997.0000**.\n\nPrecio actual: $109874.2700"
@@ -4996,6 +4961,41 @@
     },
     {
         "timestamp": "2026-06-18 19:18:55",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **ADBE** ha tocado el nivel de soporte en **$208.0000**.\n\nPrecio actual: $195.1600"
+    },
+    {
+        "timestamp": "2026-06-19 18:48:37",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Mensual para BTCUSDT: Tendencia a sobreventa. El RSI (42.44) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-19 18:48:37",
+        "type": "RSI CRITICO",
+        "message": "\ud83d\udcc9 Alerta RSI Semanal para BTCUSDT: Tendencia a sobreventa. El RSI (35.24) est\u00e1 por debajo de la mayor\u00eda de los niveles manuales."
+    },
+    {
+        "timestamp": "2026-06-19 18:48:37",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$64000.0000**.\n\nPrecio actual: $63362.0000"
+    },
+    {
+        "timestamp": "2026-06-19 18:48:37",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **BTCUSDT** ha tocado el nivel de soporte en **$66000.0000**.\n\nPrecio actual: $63362.0000"
+    },
+    {
+        "timestamp": "2026-06-19 18:48:39",
+        "type": "RESISTENCIA ALCANZADA",
+        "message": "\ud83d\udd34 **ALERTA RESISTENCIA**\n\nEl precio de **SOFI** ha tocado el nivel de resistencia en **$17.2000**.\n\nPrecio actual: $17.9100"
+    },
+    {
+        "timestamp": "2026-06-19 18:48:41",
+        "type": "SOPORTE ALCANZADO",
+        "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **ADBE** ha tocado el nivel de soporte en **$236.5100**.\n\nPrecio actual: $195.1600"
+    },
+    {
+        "timestamp": "2026-06-19 18:48:41",
         "type": "SOPORTE ALCANZADO",
         "message": "\ud83d\udfe2 **ALERTA SOPORTE**\n\nEl precio de **ADBE** ha tocado el nivel de soporte en **$208.0000**.\n\nPrecio actual: $195.1600"
     }
